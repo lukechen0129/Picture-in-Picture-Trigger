@@ -1,0 +1,26 @@
+{
+  "name": "Picture in Picture Trigger",
+  "version": "1.0",
+  "description": "To make PIP works in different websites",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon2.png",
+      "32": "images/icon2.png",
+      "48": "images/icon2.png",
+      "128": "images/icon2.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon2.png",
+    "32": "images/icon2.png",
+    "48": "images/icon2.png",
+    "128": "images/icon2.png"
+  },
+  "permissions": ["declarativeContent", "storage", "tabs","activeTab"],
+  "manifest_version": 2
+}
