@@ -8,15 +8,17 @@ var domain;
     console.log(tabs[0]);
     url = tabs[0].url;
     domain = extractHostname(url);
-    switch (domain) {
-      case "www.youtube.com": domain = "youtube";
-                              break;
-      case "www.twitch.tv":   domain = "twitch";
-                              break;
-      default:                domain = "gimy";
-                              break;
-
-    }
+    // switch (domain) {
+    //   case "www.youtube.com": domain = "youtube";
+    //                           break;
+    //   case "www.twitch.tv":   domain = "twitch";
+    //                           break;
+    //   case "www.facebook.com":domain = "facebook";
+    //                           break;
+    //   default:                domain = "gimy";
+    //                           break;
+    // 
+    // }
   });
 })();
 pipBtn.onclick = function(element) {
@@ -38,12 +40,15 @@ function extractHostname(url) {
     else {
         hostname = url.split('/')[0];
     }
-
     //find & remove port number
     hostname = hostname.split(':')[0];
     //find & remove "?"
     hostname = hostname.split('?')[0];
-
+    var index = 0;
+    if((hostname.split(",").length - 1) > 1){
+      index = 1;
+    }
+    hostname = hostname.split(',')[index];
     host.innerText = hostname;
     return hostname;
 }
